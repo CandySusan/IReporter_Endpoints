@@ -18,11 +18,9 @@ def home_page():
     return "welcome to IReporter"
 
 
-"""this method creates the red_flags record"""
-
-
 @app.route('/api/v1/redflags', methods=["POST"])
 def create_red_flag_record():
+    """this method creates the red_flags record"""
     redFlag = controller.add_red_flag_record(Record)
     return redFlag
 

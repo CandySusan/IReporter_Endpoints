@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import jsonify, request
 from api.models import incident_inventory, user_list
 
 from api.validate import Validation
@@ -27,14 +27,10 @@ class Controller:
         comment = request_data['comment']
 
         red_flag = dict(
-
             Id=id,
-
-            # createdOn = createdOn,
             createdBy=createdBy,
             type=_type,
             location=location,
-
             Images=Images,
             Videos=Videos,
             comment=comment
