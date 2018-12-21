@@ -21,7 +21,7 @@ def home_page():
 @app.route('/api/v1/redflags', methods=["POST"])
 def create_red_flag_record():
     """this method creates the red_flags record"""
-    redFlag = controller.add_red_flag_record(Record)
+    redFlag = controller.add_red_flag_record()
     return redFlag
 
 
