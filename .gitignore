@@ -1,4 +1,9 @@
 .idea
 .vscode
+<<<<<<< HEAD
 .venv
 __pycache__
+=======
+venv
+pycache
+>>>>>>> develop

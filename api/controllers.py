@@ -1,5 +1,5 @@
-from flask import Flask, jsonify, request
-from api.models import incident_inventory, user_list
+from flask import jsonify, request
+from api.models import incident_inventory, user_list, Record
 
 from api.validate import Validation
 
@@ -8,13 +8,18 @@ validate=Validation()
 
 class Controller:
 
-    def add_red_flag_record(self, Record):
+    def add_red_flag_record(self):
         """this function adds a red-flag to the incident_inventory"""
 
         red_flags = []
 
         request_data = request.get_json()
+<<<<<<< HEAD
         print (request_data)
+=======
+        
+        
+>>>>>>> develop
         id = len(red_flags)+1,
         createdBy = request_data['createdBy'],
         incident_type = request_data['incident_type'],
