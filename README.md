@@ -4,28 +4,61 @@ iReporter enablesany/every citizen to bring any form of corruption to the notice
 
 The API endpoints are defined below and use data structures to store data in memory.
 
+# Features User side:
+
+- Signup page using personal information.
+- Login page using Email and Password
+- create a red-flag record.
+- create an intervention record
+- delete a red-flag or intervention record
+- add videos or image to either red-flag or intervention record
+- add geolocation to either red-flag or intervention record
+- view all user red-flag or intervention records a user has created
+
+# User's profile where a User can view
+
+- the number of red-flags/interventions that has been resolved
+- the number of red-flags/interventions that has yet be resolved(in draft or under investigation states)
+- the number of red-flags/interventions that has been rejected
+- list of all red-flag/interventions records
+
+# As an Admin:
+
+- i can change the status of a red-flag/intervention records
+- i can see all the red-flag/intervention records by all users
+
+
 # Project
-********************************************************
-To run the project Locally, clone [https://github.com/CandySusan/IReporter_Endpoints.git]
+
+To run the project Locally, clone
+```https://github.com/CandySusan/IReporter_Endpoints.git```
 
 - cd into the folder that contains the cloned project.
+```cd <directory-name>```
 - create a virtual environment.
+```virtualenv (name)```
 - activate the virtual environment.
+```For Windows:
+	$ (virtualenv name)\scripts\activate ``` 	
+```For Linux: 
+ 	$source(virtualenv name)/bin/activate```
 - pip install the requirements.txt.
-- to run the project use python3. the run command is [python run.py].
+```pip install -r requirements.txt```
+- to run the project use python3 the run command is
+ ```python run.py``
 
 
 # Application Features
 
-	                      
-|   EndPoint                            | Function        
-| -------------                         |:-------------:
-| GET /red_flags                        |Fetch all red-flag records. 
-| GET /red_flags/red_flags_id           |Fetch a specific red-flag record.  
-| PATCH /red-flags/red-flag-id/location |Edit the location of a specific red-flag record.
-  PATCH /red-flags/red-flag-id/comment  |Edit the comment of a specific red-flag record.  
-  POST /red_flags                       |Create a red-flag record.
-  DELETE /red-flags/red-flag-id         |Delete a specific red flag record.
+	                       
+|   EndPoint Function                     !  URL                        ! Method  ! Output                
+| -------------                           !---------------:             !--------:|:-------------:
+| Fetch all red-flag records.             !api/v1/red_flags             !GET      |
+| Fetch a specific red-flag record.       !api/v1/red_flags/id          !GET      |
+| Edit the location of a specific red-flag!api/v1/red_flags_id/location !PATCH    |
+  Edit the comment of a specific red-flag !api/vi/red_flags_id/comment  !PATCH    | 
+  Create a red-flag record.               !api/v1/red_flags             |POST     !
+  Delete a specific red flag record.      !api/v1/red_flags_id          |DELETE   !
 
 # Installation & Requirements
 
@@ -41,8 +74,11 @@ To run the project Locally, clone [https://github.com/CandySusan/IReporter_Endpo
 
 - PEP8 [Style Guide]
 
-- Install using pip: pip install Flask 
+- Install using pip e.g:```pip install Flask ``` 
+
+# Deployment
+ The api is deployed on heroku
 
 ## Author
 
--  Candy Susan)      
+-  Candy Susan      

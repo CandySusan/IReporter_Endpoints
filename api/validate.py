@@ -3,7 +3,7 @@ import datetime
 
 import re
 
-from api.models import user_list, incident_inventory
+from api.models import user_list, incident_inventory,Record
 
 
 class Validation:
@@ -22,26 +22,25 @@ class Validation:
     def validate_add_red_flag(self, **args): 
 
         id = len(user_list)+1,
-        createdOn = args.get('createdOn'),
+        
         createdBy = args.get('createdBy'),
-        # incident_type = args.get('incident_type'),
         location = args.get('location'),
         status = args.get('draft'),
-        Images = args.get('Images'),
-        Videos = args.get(' Videos'),
+        images = args.get('images'),
+        videos = args.get('videos'),
         comment = args.get('comment')
 
-        if createdOn:
-            datetime = "%Y-%m-%d"
-            return jsonify({"message": datetime}), 200
-        elif not createdOn:
-            return jsonify({"message": "enter date"}), 400
+        # if createdOn:
+        #     # datetime = str(datetime.date.today())
+        #     return jsonify({"message": createdOn}), 200
+        # elif not createdOn:
+        #     return jsonify({"message": "enter date"}), 400
 
         if not createdBy or createdBy is " ":
             return jsonify({
                 "message": "oops field cannot be empty"
             }), 400
-        elif createdBy != int:
+        elif createdBy == int:
             return jsonify({"message": "createdBy should be integers"}), 400
         elif not location or location is " ":
             return jsonify({
@@ -49,7 +48,7 @@ class Validation:
             }), 400
         elif not comment or comment is " ":
             return jsonify({
-                "message": "oops othernames required and cannot be empty"
+                "message": "oops comment required and cannot be empty"
             }), 400
 
         if not id or len(id) == 0:
@@ -61,9 +60,9 @@ class Validation:
                 "message": "oops  id has to be a set of integers"
             }), 400
 
-        if not Images or Images is " ":
+        if not images or images is " ":
             return jsonify({"message": "Email field can not be empty"}), 400
-        elif not Videos or Videos is "":
+        elif not videos or videos is "":
             return jsonify({"message": "Enter a valid email address"}), 400
 
         if not status or status is " ":
@@ -141,7 +140,7 @@ class Validation:
             }), 400
         return userId
 
-    @staticmethod
+    
     def validate_red_flag(self, red_flag):
         validations = []
 

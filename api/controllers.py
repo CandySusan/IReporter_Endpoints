@@ -14,38 +14,23 @@ class Controller:
         red_flags = []
 
         request_data = request.get_json()
-        
         print (request_data)
         id = len(red_flags)+1,
-        # createdOn =  request_data['createdOn'],
         createdBy = request_data['createdBy'],
-        _type = request_data['type'],
+        incident_type = request_data['incident_type'],
         location = request_data['location'],
-
-        Images = request_data['Images'],
-        Videos = request_data['Videos'],
+        images = request_data['images'],
+        videos = request_data['videos'],
         comment = request_data['comment']
-
-        red_flag = dict(
-
-            Id=id,
-
-            # createdOn = createdOn,
-            createdBy=createdBy,
-            type=_type,
-            location=location,
-
-            Images=Images,
-            Videos=Videos,
-            comment=comment
-        )
-
-        validate = Validation.validate_add_red_flag(self)
-        if validate:
-            return jsonify({"mesage":"Some fields missing"})
-       
-        incident_inventory.append(red_flag)
-        return jsonify({"status":201,"message":"Created successfully"}),201
+        red_flag_record = Record(id=id,createdBy=createdBy,incident_type=incident_type,location=location,images=images,videos=videos,comment=comment)
+        validate = Validation.validate_add_red_flag(red_flag_record)
+        if  validate == "validated":
+                    #    return jsonify({"status":400,"message":"Some fields missing"}),400
+            valid_red_flag = Record.red_flag_dict(self)
+            incident_inventory.append(valid_red_flag)
+            return jsonify({"status":201,"message":"Created successfully"}),201
+        else:
+            return validate
 
         # validateReedflag = RedflagClass.func(data);
         # if validateReedflag == "falg valid":
