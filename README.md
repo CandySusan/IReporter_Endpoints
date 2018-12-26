@@ -11,26 +11,32 @@ The API endpoints are defined below and use data structures to store data in mem
 
 # Project
 ********************************************************
-To run the project Locally, clone [https://github.com/CandySusan/IReporter_Endpoints.git]
+To run the project Locally, clone 
+```https://github.com/CandySusan/IReporter_Endpoints.git```
 
 - cd into the folder that contains the cloned project.
+```$ cd <directory-name>```
 - create a virtual environment.
+```virtualenv <name>```
 - activate the virtual environment.
+```For Windows:$ (virtualenv name)\scripts\activate``` 	
+```For Linux: $source(virtualenv name)/bin/activate```
 - pip install the requirements.txt.
-- to run the project use python3. the run command is [python run.py].
+```pip install -r requirements.txt```
+- to run the project use python3
+```python run.py```
 
 
 # Application Features
 
-	                      
-|   EndPoint       |                     | Function        
-| -------------                         |:-------------:
-| GET /red_flags                        |Fetch all red-flag records. 
-| GET /red_flags/red_flags_id           |Fetch a specific red-flag record.  
-| PATCH /red-flags/red-flag-id/location |Edit the location of a specific red-flag record.
-  PATCH /red-flags/red-flag-id/comment  |Edit the comment of a specific red-flag record.  
-  POST /red_flags                       |Create a red-flag record.
-  DELETE /red-flags/red-flag-id         |Delete a specific red flag record.
+| Tasks                                    | urls                                  |Methods  
+|:-------------:                           |:..........:                           |:.......: 
+|Fetch all red-flag records.               |api/v1/redflags                        |GET
+|Fetch pecific red-flag record.            |api/v1/redflags/int:redflag_id         |GET
+|Edit location of specific red-flag record.|api/v1/redflags/int:redflag_id/location|PATCH
+|Edit comment of specific red-flag record. |api/v1/redflags/int:redflag_id/edit    |PATCH    
+|Create red-flag record.                   |api/v1/redflags                        |POST
+|Delete specific red flag record.          |api/v1/redflags/int:redflag_id/delete  |DELETE
 
 # Installation & Requirements
 
@@ -46,7 +52,27 @@ To run the project Locally, clone [https://github.com/CandySusan/IReporter_Endpo
 
 - PEP8 [Style Guide]
 
-- Install using pip: pip install Flask 
+- Install using pip: ```pip install Flask ```
+
+# Acknowledgments
+
+- Used this URL as a guideline to build the api endpoints 
+```http://flask.pocoo.org/```
+- Stackoverflow 
+- w3schools
+
+
+# Deployment
+
+My app endpoints is hosted on heroku ``` ```
+
+# Acknowledgments
+
+- Used this URL as a guideline to build the api endpoints 
+```http://flask.pocoo.org/```
+- Stackoverflow 
+- w3schools
+
 
 ## Author
 
