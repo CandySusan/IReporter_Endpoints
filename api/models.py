@@ -1,6 +1,7 @@
 
 import datetime
 
+red_flags =[]
 incident_inventory = []
 user_list = []
 
@@ -19,8 +20,10 @@ class Record():
         self.comment =args.get('comment')
     
     def red_flag_dict(self):
+        
         red_flag = dict(
-            Id = self.id,
+            Id = len(red_flags)+1,
+            createdOn = datetime.date.today(),
             createdBy = self.createdBy,
             incident_type= self.incident_type,
             location = self.location,
