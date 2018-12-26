@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/CandySusan/IReporter_Endpoints/badge.svg?branch=master)](https://coveralls.io/github/CandySusan/IReporter_Endpoints?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/CandySusan/IReporter_Endpoints/badge.svg?branch=develop)](https://coveralls.io/github/CandySusan/IReporter_Endpoints?branch=develop)
 [![Build Status](https://travis-ci.org/CandySusan/IReporter_Endpoints.svg?branch=develop)](https://travis-ci.org/CandySusan/IReporter_Endpoints)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6c6f6d4edcbe4abe38ac/maintainability)](https://codeclimate.com/github/CandySusan/IReporter_Endpoints/maintainability)
 
