@@ -12,31 +12,47 @@ The API endpoints are defined below and use data structures to store data in mem
 # Project
 ********************************************************
 To run the project Locally, clone 
-```https://github.com/CandySusan/IReporter_Endpoints.git```
+
+- ```https://github.com/CandySusan/IReporter_Endpoints.git```
 
 - cd into the folder that contains the cloned project.
-```$ cd <directory-name>```
+
+- ```$ cd <directory-name>```
+
 - create a virtual environment.
-```virtualenv <name>```
+
+- ```virtualenv <name>```
 - activate the virtual environment.
-```For Windows:$ (virtualenv name)\scripts\activate``` 	
-```For Linux: $source(virtualenv name)/bin/activate```
+
+- ```For Windows:$ (virtualenv name)\scripts\activate``` 	
+- ```For Linux: $source(virtualenv name)/bin/activate```
+
 - pip install the requirements.txt.
-```pip install -r requirements.txt```
+
+- ```pip install -r requirements.txt```
+
 - to run the project use python3
-```python run.py```
+
+- ```python run.py```
 
 
 # Application Features
 
-| Tasks                                    | urls                                  |Methods  
-|:-------------:                           |:..........:                           |:.......: 
-|Fetch all red-flag records.               |api/v1/redflags                        |GET
-|Fetch pecific red-flag record.            |api/v1/redflags/int:redflag_id         |GET
-|Edit location of specific red-flag record.|api/v1/redflags/int:redflag_id/location|PATCH
-|Edit comment of specific red-flag record. |api/v1/redflags/int:redflag_id/edit    |PATCH    
-|Create red-flag record.                   |api/v1/redflags                        |POST
-|Delete specific red flag record.          |api/v1/redflags/int:redflag_id/delete  |DELETE
+| Tasks                                      | urls                                  |Methods  
+
+|:-------------:                             |:..........:                           |:.......: 
+
+|Fetch all red-flag records.                 |api/v1/redflags                        |GET
+
+|Fetch pecific red-flag record.              |api/v1/redflags/int:redflag_id         |GET
+
+|Edit location of specific red-flag record.  |api/v1/redflags/int:redflag_id/location|PATCH
+
+|Edit comment of specific red-flag record.   |api/v1/redflags/int:redflag_id/edit    |PATCH  
+
+|Create red-flag record.                     |api/v1/redflags                        |POST
+
+|Delete specific red flag record.            |api/v1/redflags/int:redflag_id/delete  |DELETE
 
 # Installation & Requirements
 
