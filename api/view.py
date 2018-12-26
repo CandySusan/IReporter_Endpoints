@@ -5,12 +5,13 @@ from flask import Flask, jsonify, request, Response
 from api.models import Record,  incident_inventory, User, user_list
 from api.controllers import Controller
 from api.validate import Validation
+from api.models import Record
 
 app = Flask(__name__)
 
 controller = Controller()
-# user_controller = User_controller()
 validation = Validation()
+record = Record
 
 
 @app.route('/')
