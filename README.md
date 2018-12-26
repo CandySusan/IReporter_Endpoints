@@ -23,7 +23,7 @@ To run the project Locally, clone [https://github.com/CandySusan/IReporter_Endpo
 # Application Features
 
 	                      
-|   EndPoint                            | Function        
+|   EndPoint       |                     | Function        
 | -------------                         |:-------------:
 | GET /red_flags                        |Fetch all red-flag records. 
 | GET /red_flags/red_flags_id           |Fetch a specific red-flag record.  
