@@ -13,34 +13,34 @@ The API endpoints are defined below and use data structures to store data in mem
 ********************************************************
 To run the project Locally, clone 
 
-- ```https://github.com/CandySusan/IReporter_Endpoints.git```
+ ```https://github.com/CandySusan/IReporter_Endpoints.git```
 
-- cd into the folder that contains the cloned project.
+cd into the folder that contains the cloned project.
 
-- ```$ cd <directory-name>```
+ ```$ cd <directory-name>```
 
-- create a virtual environment.
+create a virtual environment.
 
-- ```virtualenv <name>```
-- activate the virtual environment.
+ ```virtualenv <name>```
+activate the virtual environment.
 
-- ```For Windows:$ (virtualenv name)\scripts\activate``` 	
-- ```For Linux: $source(virtualenv name)/bin/activate```
+ ```For Windows:$ (virtualenv name)\scripts\activate``` 	
+  ```For Linux: $source(virtualenv name)/bin/activate```
 
-- pip install the requirements.txt.
+pip install the requirements.txt.
 
-- ```pip install -r requirements.txt```
+ ```pip install -r requirements.txt```
 
-- to run the project use python3
+to run the project use python3
 
-- ```python run.py```
+ ```python run.py```
 
 
 # Application Features
 
 | Tasks                                      | urls                                  |Methods  
 
-|:-------------:                             |:..........:                           |:.......: 
+|-------------                               |:..........:                           |:.......: 
 
 |Fetch all red-flag records.                 |api/v1/redflags                        |GET
 
