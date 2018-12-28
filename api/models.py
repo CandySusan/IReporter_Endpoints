@@ -9,7 +9,7 @@ user_list = []
 class Record():
     def __init__(self, **args):
 
-        self.id = args.get("id"),
+        self.red_flag_id = args.get("red_flag_id"),
         self.createdOn = args.get(datetime.date.today()),
         self.createdBy = args.get('createdBy'),
         self.incident_type = args.get('incident_type'),
@@ -22,7 +22,7 @@ class Record():
     def red_flag_dict(self):
         
         red_flag = dict(
-            Id = len(red_flags)+1,
+            red_flag_id = len(red_flags)+1,
             createdOn = datetime.date.today(),
             createdBy = self.createdBy,
             incident_type= self.incident_type,
@@ -31,7 +31,8 @@ class Record():
             videos=self.videos,
             comment=self.comment
         )
-        return red_flag
+        red_flags.append(red_flag)
+        return red_flags
   
 
 
