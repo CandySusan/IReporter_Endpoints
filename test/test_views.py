@@ -32,3 +32,36 @@ class TestApi(unittest.TestCase):
         )
         self.assertEqual(response.status_code, 201)
         self.assertEqual(response.content_type, 'application/json')
+
+    def test_get_all_flag(self):
+        response = self.client.get(
+            self.hostname+'redflags',
+            content_type='application/json',
+            data=json.dumps(self.redflags)
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.content_type, 'application/json')
+
+
+    def test_get_specific_flag(self):
+        response = self.client.get(
+            self.hostname+'redflags/<int:id>',
+            content_type='text/html',
+            data=json.dumps(self.redflags)
+        )
+        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.content_type, 'text/html')
+        
+
+    def test_red_flag_not_found(self):
+        red_flag_id = 0
+        self.assertEqual(red_flag_id,False)
+
+
+    def test_id_is_int(self):
+        red_flag_id = 2
+        self.assertTrue(red_flag_id,True)
+    
+    def test_red_flag_exists(self):
+        red_flag_id  = 1
+        self.assertEqual(red_flag_id,True)
