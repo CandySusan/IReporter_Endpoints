@@ -22,9 +22,11 @@ cd into the folder that contains the cloned project.
 create a virtual environment.
 
  ```virtualenv <name>```
+
 activate the virtual environment.
 
- ```For Windows:$ (virtualenv name)\scripts\activate``` 	
+ ```For Windows:$ (virtualenv name)\scripts\activate``` 
+
   ```For Linux: $source(virtualenv name)/bin/activate```
 
 pip install the requirements.txt.
@@ -38,21 +40,15 @@ to run the project use python3
 
 # Application Features
 
-| Tasks                                      | urls                                  |Methods  
+|  Tasks                                     | urls                                   | Methods |
+| -------------                              |:-------------:                         | -----:  |
+| Fetch all red-flag records                 | api/v1/redflags                        | GET     |
+| Fetch pecific red-flag record.             | api/v1/redflags/int:redflag_id         | GET     |
+| Edit location of specific red-flag record. | api/v1/redflags/int:redflag_id/location| PATCH   |
+| Edit comment of specific red-flag record   | api/v1/redflags/int:redflag_id/edit    | PATCH   |
+| Create red-flag record.                    | api/v1/redflags                        | POST    | 
+| Delete specific red flag record.           | api/v1/redflags/int:redflag_id/delete  | DELETE  |
 
-|-------------                               |:..........:                           |:.......: 
-
-|Fetch all red-flag records.                 |api/v1/redflags                        |GET
-
-|Fetch pecific red-flag record.              |api/v1/redflags/int:redflag_id         |GET
-
-|Edit location of specific red-flag record.  |api/v1/redflags/int:redflag_id/location|PATCH
-
-|Edit comment of specific red-flag record.   |api/v1/redflags/int:redflag_id/edit    |PATCH  
-
-|Create red-flag record.                     |api/v1/redflags                        |POST
-
-|Delete specific red flag record.            |api/v1/redflags/int:redflag_id/delete  |DELETE
 
 # Installation & Requirements
 
@@ -68,19 +64,15 @@ to run the project use python3
 
 - PEP8 [Style Guide]
 
-- Install using pip: ```pip install Flask ```
+- Install using pip: 
 
-# Acknowledgments
-
-- Used this URL as a guideline to build the api endpoints 
-```http://flask.pocoo.org/```
-- Stackoverflow 
-- w3schools
+ ```pip install Flask ```
 
 
 # Deployment
 
-My app endpoints is hosted on heroku ``` ```
+My app endpoints is hosted on heroku 
+``` [I'm an inline-style link](https://www.google.com)```
 
 # Acknowledgments
 
@@ -92,4 +84,4 @@ My app endpoints is hosted on heroku ``` ```
 
 ## Author
 
--  Candy Susan)      
+-  Candy Susan     
