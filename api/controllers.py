@@ -40,8 +40,9 @@ class Controller:
 
     def get_specific_red_flag_record(self,red_flag_id):
         """this function returns a specific red_flag record"""
+       
         
+
         for red_flag in incident_inventory:
             if red_flag['red_flag_id'] == red_flag_id:
                 return incident_inventory
-        
