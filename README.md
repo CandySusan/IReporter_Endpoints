@@ -40,8 +40,9 @@ to run the project use python3
 
 # Application Features
 
+
 |  Tasks                                     | urls                                   | Methods |
-| -------------                              | -------------                          | -----   |
+| -------------                              | -------------                          | ----- cd  |
 | Fetch all red-flag records                 | api/v1/redflags                        | GET     |
 | Fetch pecific red-flag record.             | api/v1/redflags/int:redflag_id         | GET     |
 | Edit location of specific red-flag record. | api/v1/redflags/int:redflag_id/location| PATCH   |
