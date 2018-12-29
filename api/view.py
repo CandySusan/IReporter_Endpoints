@@ -35,7 +35,12 @@ def get_all_flag():
 
 @app.route('/api/v1/redflags/<int:red_flag_id>', methods=['GET'])
 def get_specific_red_flag_record(red_flag_id):
-    redFlags = controller.get_specific_red_flag_record(id)
+    redFlags = controller.get_specific_red_flag_record(red_flag_id)
     if not redFlags:
         return jsonify({"status": 404,"error": "redflag not found"}), 404
     return jsonify({"status":200},redFlags),200
+     
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return jsonify({"error": "The URL entered does not exist!!","status":404}),404
