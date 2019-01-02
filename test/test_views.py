@@ -20,6 +20,14 @@ class TestApi(unittest.TestCase):
             "videos": "[image, image]" ,
             "comment" : "it's a pity"
                     }
+        self.test_redflags ={
+            "createdBy":"",
+            "incident_type":"",
+            "location" : "" ,
+            "images" : "" ,
+            "videos": "" ,
+            "comment" : ""
+                    }
 
 
     def test_invalid_url(self):
@@ -37,16 +45,16 @@ class TestApi(unittest.TestCase):
         self.assertEqual(response.status_code, 201)
         self.assertEqual(response.content_type, 'application/json')
         self.assertEqual(data.get("status"), 201)
-
+        self.assertTrue(data, dict)
 
     # def test_add_red_flag_record_not_created(self):
     #     response = self.client.post(
     #         self.hostname+'redflags',
     #         content_type='application/json',
-    #         data=json.dumps(self.redflags),
+    #         data=json.dumps(self.test_redflags),
     #         )
     #     data =json.loads(response.data.decode())
-    #     self.assertEqual(data["status"], 400)
+    #     self.assertEqual(data["status"], 404)
     #     self.assertEqual(data["error"], "The red_flag record not created")
 
     def test_get_all_flag(self):
@@ -101,6 +109,7 @@ class TestApi(unittest.TestCase):
         self.assertEqual(response.status_code, 404)
         self.assertEqual(data.get("status"), 404) 
         self.assertTrue(data, dict)
+        
     
 
     def test_delete_specific_red_flag_record_doesnot_exist(self):
