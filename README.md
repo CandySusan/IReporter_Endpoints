@@ -73,7 +73,7 @@ to run the project use python3
 # Deployment
 
 My app endpoints is hosted on heroku 
-``` [My Heroku Link](https://candy-ireporter.herokuapp.com/)```
+ [My Heroku Link](https://candy-ireporter.herokuapp.com/)
 
 
 # Acknowledgments
