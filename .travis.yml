@@ -2,8 +2,10 @@ language: python
 
 python:
  - "3.6"
+
 services:
-  - postgresql
+- postgresql
+
 env:
   global:
     APP_SETTINGS = "test_db"
@@ -11,8 +13,10 @@ env:
 install:
  - pip install -r requirements.txt
  - pip install pytest-cov
+
 before script:
   - psql -c 'createdb test_db;' -U postgres
+
 script:
  - py.test --cov=api
 

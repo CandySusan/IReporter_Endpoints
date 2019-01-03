@@ -1,0 +1,17 @@
+[report]
+omit =
+  */venv/*
+  */test_views.py
+  */python?.?/*
+  */site-packages/nose/*
+  */__pycache__/*
+  */__init__/*
+  *.pyc
+  */venv/*
+  */models.py
+  */test_views.py
+  */controllers.py
+  */validate.py
+  */__init__.py
+
+  */home/travis/virtualenv/*
