@@ -49,6 +49,14 @@ def delete_specific_red_flag_record(red_flag_id):
     del_red_flag = controller.delete_specific_red_flag_record(red_flag_id)
     return del_red_flag
 
+@app.route('/api/v1/redflags/<int:red_flag_id>/location', methods=['PATCH'])
+def edit_location_of_specific_red_flag_record(red_flag_id):
+    edit_location = controller.edit_location_of_specific_red_flag_record()
+    return edit_location
+
+@app.route('/api/v1/redflags/<int:red_flag_id>/comment', methods=['PATCH'])
+def edit_comment_of_specific_red_flag_record(red_flag_id):
+    pass
 
 @app.errorhandler(404)
 def error_message(e):

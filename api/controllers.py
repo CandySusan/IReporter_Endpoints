@@ -30,9 +30,11 @@ class Controller:
         incident_inventory.append(red_flag_record.red_flag_dict())
         return jsonify({
                 "status":201,
-                "data":[{"red_flag_id":red_flag_id,
-                "message":"Red flag record created successfully"
-                }]}),201
+                "data":[{
+                    "red_flag_id":red_flag_id,
+                     "message":"Red flag record created successfully"
+                    }]
+                }),201
   
     def get_all_red_flags(self):
         """this function returns incident_inventory"""
@@ -64,7 +66,6 @@ class Controller:
                     "status":404
                     }),404        
 
-
     def delete_specific_red_flag_record(self,red_flag_id):
         """This method removes the red-flag record from a list using the id"""
         if len(incident_inventory) == 0:
@@ -85,7 +86,32 @@ class Controller:
                     "status":404
                     }),404
 
-    
+    def edit_location_of_specific_red_flag_record(self):
+        data = json.loads(request.data)
+        location = data.get('location')
+        red_flag_id = data.get('red_flag_id')
+        red_flag_id = int(red_flag_id)
+        for redflag in incident_inventory:
+            if int(redflag['red_flag_id']) == red_flag_id:
+                if redflag['status'] != 'draft':
+                    return jsonify({
+                    'status': 400,
+                    'message': 'Only draft status can be updated!'}), 400
+            redflag['location'] = location
+            return jsonify({
+                'status': 200, 
+                'data':[{
+                    "red_flag_id":red_flag_id,
+                    "message": "Updated red-flag record’s location"
+                        }]
+                }), 200
+        return jsonify({"status": 404,
+                    "error": "Record doesnot exist!!"
+                    }), 404
+
+
+
+
     
    
             

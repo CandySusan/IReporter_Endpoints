@@ -50,14 +50,7 @@ class TestApi(unittest.TestCase):
             content_type='application/json',
             data=json.dumps(self.redflags),
         )
-
         data = json.loads(response.data)
-        # self.assertEqual(data["data"],
-        #    [ {
-        #        "message":"Red flag record created successfully",
-        #        "red_flag_id":1
-        #        }]
-        # )
         self.assertEqual(response.status_code, 201)
         self.assertEqual(response.content_type, 'application/json')
         self.assertEqual(data.get("status"), 201)
@@ -157,14 +150,6 @@ class TestApi(unittest.TestCase):
             data=json.dumps(self.redflags)
         )
         data = json.loads(response.data)
-        # self.assertEqual(response.status_code, 200)
-        # self.assertEqual(data["status"], 200)
-        # self.assertEqual(data["data"], [
-        #     {
-        #         "red_flag_id": 1,
-        #         "message": "red-flag record has been deleted"
-        #     }
-        # ])
         self.assertTrue(data, dict)
         self.assertEqual(response.content_type, 'application/json')
 
@@ -183,11 +168,8 @@ class TestApi(unittest.TestCase):
 
 
     def test_redflag_record_not_found(self):
-        response = self.client.delete(
-            self.hostname+'redflags/<int:red_flag_id>')
         record =[{"message": "Red_Flag record not found!",
             "status": 400}]
-        data = json.loads(response.data)
         self.assertEqual(record,[{"message": "Red_Flag record not found!",
             "status": 400}])
         self.assertTrue(record,dict)
